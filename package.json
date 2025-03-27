@@ -1,0 +1,13 @@
+{
+  "name": "holiday-planner",
+  "version": "1.0.0",
+  "description": "A website to plan holidays with friends by sharing availability.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2"
+  }
+}
