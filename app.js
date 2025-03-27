@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs'); // File system module to handle file operations
@@ -82,3 +83,16 @@ app.get('/api/availabilities', (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+=======
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send('Welcome to Route Planner!');
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+>>>>>>> 0652b60e2d255050826f9a597bcfb07184a2577c
