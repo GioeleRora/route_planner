@@ -19,7 +19,7 @@ app.post('/api/availability', (req, res) => {
     }
 
     // Path to the availabilities.json file
-    const filePath = path.join(__dirname, 'availabilities.json');
+    const filePath = path.join(__dirname, 'data', 'availabilities.json');
 
     // Ensure the file exists or create it if it doesn't
     if (!fs.existsSync(filePath)) {
