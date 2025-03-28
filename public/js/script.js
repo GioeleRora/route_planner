@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('Script is connected and running!');
+
     const calendarContainer = document.getElementById('calendar');
     const startDate = new Date('2025-07-01');
     const endDate = new Date('2025-08-31');
@@ -80,6 +82,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    const form = document.getElementById('availability-form');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        resultDiv.textContent = `Thank you, ${name}, for submitting your availability!`;
+    });
 });
 
 document.getElementById('availability-form').addEventListener('submit', async (e) => {
@@ -88,15 +99,22 @@ document.getElementById('availability-form').addEventListener('submit', async (e
     const selectedDays = Array.from(document.querySelectorAll('#calendar .calendar-day.selected'))
         .map(dayDiv => dayDiv.dataset.date); // Get the selected dates
 
-    const response = await fetch('/api/availability', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, days: selectedDays })
-    });
+    try {
+        const response = await fetch('/api/availability', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, days: selectedDays })
+        });
 
-    if (response.ok) {
-        window.location.href = '/results'; // Redirect to the results page
-    } else {
-        alert('Error submitting availability');
+        if (response.ok) {
+            window.location.href = '/results'; // Redirect to the results page
+        } else {
+            const errorData = await response.json();
+            console.error('Error submitting availability:', errorData);
+            alert(`Error: ${errorData.error}`);
+        }
+    } catch (error) {
+        console.error('Network error:', error);
+        alert('Network error while submitting availability.');
     }
 });
