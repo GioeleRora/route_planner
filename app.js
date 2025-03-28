@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs'); // File system module to handle file operations
@@ -60,7 +62,7 @@ app.get('/results', (req, res) => {
 
 // API route to fetch availabilities for results.js
 app.get('/api/availabilities', (req, res) => {
-    const filePath = path.join(__dirname, 'availabilities.json');
+    const filePath = path.join(__dirname, 'data', 'availabilities.json');
 
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {

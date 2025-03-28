@@ -70,9 +70,9 @@ button:hover {
 }
 
 .calendar-day.placeholder {
-    visibility: hidden; /* Make the placeholder invisible */
-    border: none; /* Remove borders for placeholders */
-    background-color: transparent; /* Ensure no background color */
+    visibility: hidden;
+    border: none;
+    background-color: transparent;
 }
 
 .calendar-header {
