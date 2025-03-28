@@ -85,6 +85,16 @@ button:hover {
     border-radius: 10px;
 }
 
+.calendar-header-result {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background-color: #7822b5;
+    color: #1d103b;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
 #availability-form {
     display: flex;
     flex-direction: column;
@@ -145,7 +155,7 @@ button:hover {
     font-family: Arial, sans-serif;
     margin: 20px;
     padding: 0;
-    background-color: #a681fc;
+    background-color: #dfa105;
 }
 
 #calendar-day-results {
@@ -162,4 +172,45 @@ button:hover {
 
 #best-slot {
     text-align: center;
+}
+
+#results-title {
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+}
+
+#end-results {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+#results-button {
+    padding: 25px 40px;
+    font-size: 20px;
+    background-color: #6c87a4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+}
+
+#slot-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 40%;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid #ccc;
+    background-color: green;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
 }
