@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "route-planner",
   "version": "1.0.0",
@@ -16,3 +17,23 @@
     "uuid": "^9.0.0"
   }
 }
+=======
+{
+  "name": "route-planner",
+  "version": "1.0.0",
+  "description": "A simple route planner for a group of people",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "build": "echo 'No build step required' && exit 0",
+    "vercel-build": "npm start"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.2.0",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.7",
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  }
+}
+>>>>>>> 71d150372b1f7a67fedf71836fd11161f486a795
